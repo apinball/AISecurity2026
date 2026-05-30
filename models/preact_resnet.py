@@ -36,9 +36,9 @@ class PreActBlock(nn.Module):
         out = self.conv1(out)
         out = self.conv2(F.relu(self.bn2(out)))
         if self.ind is not None:
-            out += shortcut[:, self.ind, :, :]
+            out = out + shortcut[:, self.ind, :, :]
         else:
-            out += shortcut
+            out = out + shortcut
         return out
 
 
@@ -67,7 +67,7 @@ class PreActBottleneck(nn.Module):
         out = self.conv1(out)
         out = self.conv2(F.relu(self.bn2(out)))
         out = self.conv3(F.relu(self.bn3(out)))
-        out += shortcut
+        out = out + shortcut
         return out
 
 
