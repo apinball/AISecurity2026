@@ -195,7 +195,7 @@ def load_attack_result(
     save_path MUST have 'record' in its abspath, and data_path in attack result MUST have 'data' in its path!!!
     save_path : the path of "attack_result.pt"
     '''
-    load_file = torch.load(save_path)
+    load_file = torch.load(save_path, weights_only=False)
 
     if all(key in load_file for key in ['model_name',
         'num_classes',

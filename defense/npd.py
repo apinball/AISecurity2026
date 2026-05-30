@@ -137,7 +137,7 @@ class NPD(defense):
         parser.add_argument('--result_file', type=str, help='the location of result')
     
         parser.add_argument('--batch_size', type=int)
-        parser.add_argument("--num_workers", type=float)
+        parser.add_argument("--num_workers", type=int)
         parser.add_argument('--lr_scheduler', type=str, help='the scheduler of lr')
         parser.add_argument('--steplr_stepsize', type=int)
         parser.add_argument('--steplr_gamma', type=float)

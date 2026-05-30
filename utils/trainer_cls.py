@@ -199,7 +199,7 @@ class ModelTrainerCLS():
         self.model = self.model.to(device, non_blocking = True)
 
         load_dict = torch.load(
-            path, map_location=device
+            path, map_location=device, weights_only=False
         )
 
         logging.info(f"loading... keys:{load_dict.keys()}, only_load_model:{only_load_model}")
@@ -751,8 +751,8 @@ def general_plot_for_epoch(
         ('loosely dashdotdotted', (0, (3, 10, 1, 10, 1, 10))),
         ('densely dashdotdotted', (0, (3, 1, 1, 1, 1, 1)))]
 
-    all_min = np.infty
-    all_max = -np.infty
+    all_min = np.inf
+    all_max = -np.inf
     for idx, (label, value_list) in enumerate(labelToListDict.items()):
         linestyle = linestyle_tuple[
             idx % len(linestyle_tuple)

@@ -185,7 +185,7 @@ outputs = model_visual(visual_samples)
 pre_p, pre_label = torch.max(sfm(outputs), dim=1)
 
 cam = FullGrad(model=model_visual, target_layers=[
-               target_layer], use_cuda=True if args.device == 'cuda' else False)
+               target_layer])
 
 targets = None
 

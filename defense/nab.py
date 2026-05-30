@@ -141,7 +141,7 @@ def get_args():
 
     parser.add_argument('--epochs', type=int)
     parser.add_argument('--batch_size', type=int)
-    parser.add_argument("--num_workers", type=float)
+    parser.add_argument("--num_workers", type=int)
     parser.add_argument("--num_workers_semi", type=float)
     parser.add_argument('--lr', type=float)
 

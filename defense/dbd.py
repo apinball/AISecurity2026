@@ -199,7 +199,7 @@ class dbd(defense):
     
         parser.add_argument('--epochs', type=int)
         parser.add_argument('--batch_size', type=int)
-        parser.add_argument("--num_workers", type=float)
+        parser.add_argument("--num_workers", type=int)
         parser.add_argument('--lr', type=float)
         parser.add_argument('--lr_scheduler', type=str, help='the scheduler of lr')
         parser.add_argument('--steplr_stepsize', type=int)
