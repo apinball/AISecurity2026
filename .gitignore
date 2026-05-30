@@ -1,0 +1,21 @@
+# Heavy artifacts — kept locally for experiments, regenerable
+data/
+record/
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs (verbose, regenerable)
+*.log
+
+# Auto-generated HTML (regenerable via analysis/md_to_html.py)
+*.html
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local env
+*.env
