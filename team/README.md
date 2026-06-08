@@ -1,6 +1,6 @@
 # 팀 작업 분담 및 통합 정리
 
-본 디렉토리는 AISecurity2026 (BackdoorBench fork) 프로젝트에서 각 팀원이 수행한 작업과 그 결과를 정리한다. 4명이 각자 다른 백도어 공격을 담당했고, 5종 방어(FT / NAD / ANP / ABL / NC)는 공통으로 평가했다.
+본 디렉토리는 AISecurity2026 (BackdoorBench fork) 프로젝트에서 각 팀원이 수행한 작업과 그 결과를 정리한다. 각자 다른 백도어 공격을 담당했고, 방어(FT / NAD / ANP / ABL / NC, BadNets는 FP 추가)는 공통으로 평가했다.
 
 ## 담당 공격
 
@@ -10,6 +10,8 @@
 | (본인) | **Input-aware** (Dynamic per-sample trigger) | `/INPUTAWARE_REPORT.{md,pdf}` |
 | 조수빈 | **LF** (Low Frequency, additive frequency-domain trigger) | `team/lf/LF_코드_변경사항_보고서.{docx,pdf}` |
 | (SIG 담당자) | **SIG** (Sinusoidal Signal) | `team/sig/SIG 변경코드목록.docx` |
+| (BadNets 담당자) | **BadNets** (Patch-based, poison ratio 0.1) | `team/badnet/README.md` (+ `badnets_attack.ipynb`) |
+| (Blended 담당자) | **Blended** (전역 이미지 블렌딩 트리거) | `team/blended/README.md` (+ `blended_정리.docx`) |
 
 ## 환경 호환성 패치 (통합)
 
@@ -37,7 +39,7 @@
 | `analysis/md_to_html.py` | Markdown → HTML (한글 폰트 CSS) | WaNet/IA |
 | `sh_run_s_ablation.sh` | s ∈ {0.1, 0.3, 0.5, 0.7, 1.0} 자동 실행 | WaNet/IA |
 
-LF 조수빈은 Colab 노트북 형식 (`team/lf/Low Frequency_test.ipynb`)으로 공격 학습 + 5방어 + 시각화 일괄 자동화 파이프라인을 구현했다. SIG는 별도 파이프라인을 사용했다 (자세한 코드 변경은 `team/sig/SIG 변경코드목록.docx` 참조).
+LF 조수빈은 Colab 노트북 형식 (`team/lf/Low Frequency_test.ipynb`)으로 공격 학습 + 5방어 + 시각화 일괄 자동화 파이프라인을 구현했다. SIG는 별도 파이프라인을 사용했다 (자세한 코드 변경은 `team/sig/SIG 변경코드목록.docx` 참조). BadNets 담당자도 Colab 노트북 (`team/badnet/badnets_attack.ipynb`)으로 공격 + 6방어(FP 포함) + 시각화를 수행했고, 적용한 코드 변경은 위 호환성 패치 #1·#3과 동일하다 (추가 패치 없음). 결과 체크포인트는 `record/badnet_team/`에 통합되어 있다 (`team/badnet/README.md` 참조). Blended 담당자도 동일한 코드 변경(#1·#3, 추가 패치 없음)으로 공격 + 5방어(ABL/ANP/FT/NAD/NC) + 시각화를 수행했고, 결과 체크포인트는 `record/blended_team/`에 있다 (`team/blended/README.md` 참조). 단, Blended는 FT·NAD·NC 방어가 거의 실패해 ASR이 높게 남는 점이 BadNets와 다르다.
 
 ## 재현 가이드
 

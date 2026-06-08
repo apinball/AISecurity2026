@@ -19,3 +19,9 @@ Thumbs.db
 
 # Local env
 *.env
+
+# 데모 접속 로그 (IP 기록 — 커밋 금지)
+demo/access.log
+
+# gradio 런타임(인증서 등) — 커밋 금지
+.gradio/

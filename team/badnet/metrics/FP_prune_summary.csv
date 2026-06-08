@@ -1,0 +1,4 @@
+,num_pruned,all_filter_num,test_acc,test_asr,test_ra
+last,372,512,0.8206,0.9726666666666667,0.025777777777777778
+valid_max,372,512,0.9194,0.9726666666666667,0.2378888888888889
+exist_nan_value,False,False,False,False,False
